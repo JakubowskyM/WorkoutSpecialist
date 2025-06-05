@@ -135,10 +135,8 @@
             lgnErrLabel.ForeColor = Color.Red;
             lgnErrLabel.Location = new Point(277, 287);
             lgnErrLabel.Name = "lgnErrLabel";
-            lgnErrLabel.Size = new Size(174, 15);
+            lgnErrLabel.Size = new Size(0, 15);
             lgnErrLabel.TabIndex = 9;
-            lgnErrLabel.Text = "Podano błędne dane logowania";
-            lgnErrLabel.Visible = false;
             // 
             // Form1
             // 

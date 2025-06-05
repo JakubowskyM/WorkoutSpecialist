@@ -1,17 +1,38 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using WorkoutSpecialist.Data;
+using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
+
 namespace WorkoutSpecialist
 {
     internal static class Program
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
+        public static DbContextOptions<AppDbContext> DbOptions { get; private set; }
+
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
+            var builder = new DbContextOptionsBuilder<AppDbContext>();
+
+            builder.UseMySql(
+                GetConnectionString(),
+                ServerVersion.AutoDetect(GetConnectionString())
+            );
+
+            DbOptions = builder.Options;
+
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
+        }
+
+        private static string GetConnectionString()
+        {
+            var config = new ConfigurationBuilder()
+                .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+                .AddJsonFile("appsettings.json")
+                .Build();
+
+            return config.GetConnectionString("DefaultConnection");
         }
     }
 }

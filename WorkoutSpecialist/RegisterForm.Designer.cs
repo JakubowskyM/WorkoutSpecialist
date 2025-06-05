@@ -33,10 +33,10 @@
             label3 = new Label();
             pictureBox1 = new PictureBox();
             label1 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
+            loginBox = new TextBox();
+            pswdBox = new TextBox();
+            emailBox = new TextBox();
+            repPswdBox = new TextBox();
             label2 = new Label();
             label5 = new Label();
             label6 = new Label();
@@ -87,33 +87,35 @@
             label1.Text = "Rejestracja";
             label1.Click += label1_Click;
             // 
-            // textBox1
+            // loginBox
             // 
-            textBox1.Location = new Point(293, 229);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(171, 23);
-            textBox1.TabIndex = 13;
+            loginBox.Location = new Point(293, 229);
+            loginBox.Name = "loginBox";
+            loginBox.Size = new Size(171, 23);
+            loginBox.TabIndex = 13;
             // 
-            // textBox2
+            // pswdBox
             // 
-            textBox2.Location = new Point(293, 337);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(171, 23);
-            textBox2.TabIndex = 14;
+            pswdBox.Location = new Point(293, 337);
+            pswdBox.Name = "pswdBox";
+            pswdBox.PasswordChar = '*';
+            pswdBox.Size = new Size(171, 23);
+            pswdBox.TabIndex = 14;
             // 
-            // textBox3
+            // emailBox
             // 
-            textBox3.Location = new Point(293, 284);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(171, 23);
-            textBox3.TabIndex = 15;
+            emailBox.Location = new Point(293, 284);
+            emailBox.Name = "emailBox";
+            emailBox.Size = new Size(171, 23);
+            emailBox.TabIndex = 15;
             // 
-            // textBox4
+            // repPswdBox
             // 
-            textBox4.Location = new Point(293, 391);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(171, 23);
-            textBox4.TabIndex = 16;
+            repPswdBox.Location = new Point(293, 391);
+            repPswdBox.Name = "repPswdBox";
+            repPswdBox.PasswordChar = '*';
+            repPswdBox.Size = new Size(171, 23);
+            repPswdBox.TabIndex = 16;
             // 
             // label2
             // 
@@ -157,10 +159,9 @@
             rgrErrLabel.ForeColor = Color.Red;
             rgrErrLabel.Location = new Point(293, 426);
             rgrErrLabel.Name = "rgrErrLabel";
-            rgrErrLabel.Size = new Size(212, 15);
+            rgrErrLabel.Size = new Size(0, 15);
             rgrErrLabel.TabIndex = 21;
-            rgrErrLabel.Text = "Konto z takimi parametrami juz istnieje";
-            rgrErrLabel.Visible = false;
+            rgrErrLabel.Click += rgrErrLabel_Click;
             // 
             // rgrBtn
             // 
@@ -170,6 +171,7 @@
             rgrBtn.TabIndex = 22;
             rgrBtn.Text = "Zakładam konto ->";
             rgrBtn.UseVisualStyleBackColor = true;
+            rgrBtn.Click += rgrBtn_Click;
             // 
             // backBtn
             // 
@@ -179,6 +181,7 @@
             backBtn.TabIndex = 23;
             backBtn.Text = "<- Powrót do logowania";
             backBtn.UseVisualStyleBackColor = true;
+            backBtn.Click += backBtn_Click;
             // 
             // RegisterForm
             // 
@@ -192,10 +195,10 @@
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(label2);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(repPswdBox);
+            Controls.Add(emailBox);
+            Controls.Add(pswdBox);
+            Controls.Add(loginBox);
             Controls.Add(label1);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -213,10 +216,10 @@
         private Label label3;
         private PictureBox pictureBox1;
         private Label label1;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
+        private TextBox loginBox;
+        private TextBox pswdBox;
+        private TextBox emailBox;
+        private TextBox repPswdBox;
         private Label label2;
         private Label label5;
         private Label label6;
