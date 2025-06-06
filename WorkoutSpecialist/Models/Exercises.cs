@@ -16,5 +16,7 @@ namespace Workoutspecialist.Models
         public string MuscleGroup { get; set; } = null!;
 
         public string? Description { get; set; }
+
+        public ICollection<Workoutexercises> WorkoutExercises { get; set; } = new List<Workoutexercises>();
     }
 }

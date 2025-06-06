@@ -18,10 +18,11 @@ namespace Workoutspecialist.Models
 
         public int Reps { get; set; }
 
-        public float WeightKg { get; set; }
+        public float Weight { get; set; }
 
         public Workouts? Workout { get; set; }
 
         public Exercises? Exercise { get; set; }
+
     }
 }

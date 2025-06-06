@@ -10,6 +10,7 @@ namespace Workoutspecialist.Models
 
         [Required]
         [MaxLength(100)]
+        [MinLength(3)]
         public string Username { get; set; } = null!;
 
         [Required]
@@ -20,6 +21,7 @@ namespace Workoutspecialist.Models
         public string Email { get; set; } = null!;
 
         public DateTime RegistrationDate { get; set; }
-   
-}
+
+        public ICollection<Workouts> Workouts { get; set; } = new List<Workouts>();
+    }
 }

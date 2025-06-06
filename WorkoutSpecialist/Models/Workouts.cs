@@ -13,8 +13,11 @@ namespace Workoutspecialist.Models
 
         public DateTime Date { get; set; }
 
-        public string? Notes { get; set; }
+        public string? Note { get; set; }
 
         public Users? User { get; set; }
+
+        public ICollection<Workoutexercises> WorkoutExercises { get; set; } = new List<Workoutexercises>();
     }
 }
+

@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using Workoutspecialist.Models;
+using WorkoutSpecialist.Data;
 
 namespace WorkoutSpecialist
 {
@@ -18,7 +11,6 @@ namespace WorkoutSpecialist
         {
             InitializeComponent();
             this.form1 = form1;
-            this.FormClosed += (s, e) => Application.Exit();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -63,10 +55,54 @@ namespace WorkoutSpecialist
                 return;
             }
 
+            using (var context = new AppDbContext(Program.DbOptions))
+            {
+                if (context.users.Any(u => u.Username == login))
+                {
+                    rgrErrLabel.Text = "Użytkownik o tej nazwie już istnieje.";
+                    return;
+                }
+
+                var newUser = new Users
+                {
+                    Username = login,
+                    Email = email,
+                    PasswordHash = password,
+                    RegistrationDate = DateTime.Now
+                };
+
+                context.users.Add(newUser);
+                context.SaveChanges();
+            }
+
             MessageBox.Show("Rejestracja zakończona sukcesem!", "Sukces", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            this.Close();
+            form1.Show();
         }
 
+
         private void rgrErrLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void loginBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void emailBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pswdBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void repPswdBox_TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -93,6 +93,7 @@
             loginBox.Name = "loginBox";
             loginBox.Size = new Size(171, 23);
             loginBox.TabIndex = 13;
+            loginBox.TextChanged += loginBox_TextChanged;
             // 
             // pswdBox
             // 
@@ -101,6 +102,7 @@
             pswdBox.PasswordChar = '*';
             pswdBox.Size = new Size(171, 23);
             pswdBox.TabIndex = 14;
+            pswdBox.TextChanged += pswdBox_TextChanged;
             // 
             // emailBox
             // 
@@ -108,6 +110,7 @@
             emailBox.Name = "emailBox";
             emailBox.Size = new Size(171, 23);
             emailBox.TabIndex = 15;
+            emailBox.TextChanged += emailBox_TextChanged;
             // 
             // repPswdBox
             // 
@@ -116,6 +119,7 @@
             repPswdBox.PasswordChar = '*';
             repPswdBox.Size = new Size(171, 23);
             repPswdBox.TabIndex = 16;
+            repPswdBox.TextChanged += repPswdBox_TextChanged;
             // 
             // label2
             // 

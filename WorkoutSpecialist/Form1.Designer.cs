@@ -74,6 +74,7 @@
             // 
             pswdBox.Location = new Point(277, 261);
             pswdBox.Name = "pswdBox";
+            pswdBox.PasswordChar = '*';
             pswdBox.Size = new Size(229, 23);
             pswdBox.TabIndex = 3;
             // 

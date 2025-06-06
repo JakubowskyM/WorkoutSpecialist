@@ -26,10 +26,6 @@ namespace WorkoutSpecialist
                 return;
             }
 
-            // Tutaj wa¿ne: Has³o w bazie jest przechowywane jako hash.
-            // Tu dla uproszczenia porównujemy bezpoœrednio (NIE ZALECANE W PRAKTYCE).
-            // W praktyce has³o nale¿y zahashowaæ i porównaæ z PasswordHash.
-
             using (var context = new AppDbContext(Program.DbOptions))
             {
                 var user = context.users
@@ -37,8 +33,10 @@ namespace WorkoutSpecialist
 
                 if (user != null)
                 {
-                    lgnErrLabel.Text = "Zalogowano pomyœlnie.";
-                    // Tu mo¿esz otworzyæ nowe okno, zapisaæ dane u¿ytkownika itp.
+                    MainForm mainForm = new MainForm(user.UserId, user.Username);
+                    mainForm.Show();
+
+                    this.Hide();
                 }
                 else
                 {
