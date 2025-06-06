@@ -26,7 +26,6 @@ namespace WorkoutSpecialist.Controls
         {
             using var context = new AppDbContext(Program.DbOptions);
 
-            // Najwcześniejsza data treningu użytkownika (lub null, jeśli brak)
             var firstWorkoutDate = context.workouts
                 .Where(w => w.UserId == userId)
                 .OrderBy(w => w.Date)
@@ -42,7 +41,7 @@ namespace WorkoutSpecialist.Controls
                 firstWorkoutDateLabel.Text = "Brak treningów";
             }
 
-            
+
             var totalKg = (from w in context.workouts
                            join we in context.workoutExercises on w.WorkoutId equals we.WorkoutId
                            where w.UserId == userId
@@ -50,6 +49,11 @@ namespace WorkoutSpecialist.Controls
                            .Sum();
 
             totalKgLabel.Text = $"Łącznie wyciśnięto: {Math.Round(totalKg, 2)} kg";
+
+        }
+
+        private void totalKgLabel_Click(object sender, EventArgs e)
+        {
 
         }
     }

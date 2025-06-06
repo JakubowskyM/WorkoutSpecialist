@@ -13,4 +13,5 @@ namespace WorkoutSpecialist.Data
         public DbSet<Workouts> workouts { get; set; }
         public DbSet<Workoutexercises> workoutExercises { get; set; }
     }
+
 }

@@ -8,16 +8,15 @@ namespace Workoutspecialist.Models
         [Key]
         public int WorkoutId { get; set; }
 
-        [ForeignKey(nameof(Users))]
+        [ForeignKey(nameof(User))]
         public int UserId { get; set; }
 
         public DateTime Date { get; set; }
-
         public string? Note { get; set; }
 
         public Users? User { get; set; }
-
         public ICollection<Workoutexercises> WorkoutExercises { get; set; } = new List<Workoutexercises>();
     }
 }
+
 

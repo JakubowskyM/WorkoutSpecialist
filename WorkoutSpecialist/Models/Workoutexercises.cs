@@ -6,22 +6,19 @@ namespace Workoutspecialist.Models
     public class Workoutexercises
     {
         [Key]
-        public int WorkoutExcerciseId { get; set; }
+        public int WorkoutExerciseId { get; set; }
 
-        [ForeignKey(nameof(Workouts))]
+        [ForeignKey(nameof(Workout))]
         public int WorkoutId { get; set; }
 
-        [ForeignKey(nameof(Exercises))]
+        [ForeignKey(nameof(Exercise))]
         public int ExerciseId { get; set; }
 
         public int Sets { get; set; }
-
         public int Reps { get; set; }
-
         public float Weight { get; set; }
 
         public Workouts? Workout { get; set; }
-
         public Exercises? Exercise { get; set; }
 
     }

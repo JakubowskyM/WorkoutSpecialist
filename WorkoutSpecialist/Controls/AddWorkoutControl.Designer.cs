@@ -28,129 +28,115 @@
         /// </summary>
         private void InitializeComponent()
         {
-            exercisesPanel = new FlowLayoutPanel();
-            addExerciseBtn = new Button();
-            workoutSaveBtn = new Button();
             label1 = new Label();
-            remExerciseBtn = new Button();
+            exercisesQuantity = new NumericUpDown();
             label2 = new Label();
-            noteTextBox = new TextBox();
             label3 = new Label();
-            dateTimePicker = new DateTimePicker();
+            noteBox = new TextBox();
+            button1 = new Button();
+            exercisesPanel = new FlowLayoutPanel();
+            label4 = new Label();
+            ((System.ComponentModel.ISupportInitialize)exercisesQuantity).BeginInit();
             SuspendLayout();
-            // 
-            // exercisesPanel
-            // 
-            exercisesPanel.Location = new Point(231, 44);
-            exercisesPanel.Name = "exercisesPanel";
-            exercisesPanel.Size = new Size(266, 243);
-            exercisesPanel.TabIndex = 0;
-            exercisesPanel.Paint += exercisesPanel_Paint;
-            // 
-            // addExerciseBtn
-            // 
-            addExerciseBtn.Location = new Point(281, 18);
-            addExerciseBtn.Name = "addExerciseBtn";
-            addExerciseBtn.Size = new Size(105, 23);
-            addExerciseBtn.TabIndex = 0;
-            addExerciseBtn.Text = "Dodaj ćwiczenie";
-            addExerciseBtn.UseVisualStyleBackColor = true;
-            addExerciseBtn.Click += addExerciseBtn_Click;
-            // 
-            // workoutSaveBtn
-            // 
-            workoutSaveBtn.Location = new Point(392, 293);
-            workoutSaveBtn.Name = "workoutSaveBtn";
-            workoutSaveBtn.Size = new Size(105, 23);
-            workoutSaveBtn.TabIndex = 1;
-            workoutSaveBtn.Text = "Zapisz trening";
-            workoutSaveBtn.UseVisualStyleBackColor = true;
-            workoutSaveBtn.Click += workoutSaveBtn_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 238);
-            label1.Location = new Point(3, 9);
+            label1.Location = new Point(134, 0);
             label1.Name = "label1";
-            label1.Size = new Size(248, 32);
-            label1.TabIndex = 2;
-            label1.Text = "Dodawanie treningu";
+            label1.Size = new Size(242, 32);
+            label1.TabIndex = 0;
+            label1.Text = "Dodaj nowy trening";
             // 
-            // remExerciseBtn
+            // exercisesQuantity
             // 
-            remExerciseBtn.Location = new Point(392, 19);
-            remExerciseBtn.Name = "remExerciseBtn";
-            remExerciseBtn.Size = new Size(105, 23);
-            remExerciseBtn.TabIndex = 3;
-            remExerciseBtn.Text = "Usuń ćwiczenie";
-            remExerciseBtn.UseVisualStyleBackColor = true;
-            remExerciseBtn.Click += remExerciseBtn_Click;
+            exercisesQuantity.Location = new Point(132, 37);
+            exercisesQuantity.Name = "exercisesQuantity";
+            exercisesQuantity.Size = new Size(32, 23);
+            exercisesQuantity.TabIndex = 1;
+            exercisesQuantity.ValueChanged += exercisesQuantity_ValueChanged;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(14, 44);
+            label2.Location = new Point(14, 39);
             label2.Name = "label2";
-            label2.Size = new Size(117, 15);
-            label2.TabIndex = 4;
-            label2.Text = "Notatka do treningu:";
-            // 
-            // noteTextBox
-            // 
-            noteTextBox.Location = new Point(14, 62);
-            noteTextBox.Multiline = true;
-            noteTextBox.Name = "noteTextBox";
-            noteTextBox.Size = new Size(202, 62);
-            noteTextBox.TabIndex = 5;
-            noteTextBox.TextChanged += noteTextBox_TextChanged;
+            label2.Size = new Size(112, 15);
+            label2.TabIndex = 2;
+            label2.Text = "Podaj ilość ćwiczeń:";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(14, 137);
+            label3.Location = new Point(331, 48);
             label3.Name = "label3";
-            label3.Size = new Size(66, 15);
-            label3.TabIndex = 6;
-            label3.Text = "Podaj date:";
+            label3.Size = new Size(157, 15);
+            label3.TabIndex = 3;
+            label3.Text = "Wpisz notatkę (opcjonalnie):";
             // 
-            // dateTimePicker
+            // noteBox
             // 
-            dateTimePicker.Location = new Point(14, 155);
-            dateTimePicker.Name = "dateTimePicker";
-            dateTimePicker.Size = new Size(202, 23);
-            dateTimePicker.TabIndex = 7;
-            dateTimePicker.ValueChanged += dateTimePicker_ValueChanged;
+            noteBox.Location = new Point(360, 66);
+            noteBox.Multiline = true;
+            noteBox.Name = "noteBox";
+            noteBox.Size = new Size(128, 194);
+            noteBox.TabIndex = 4;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(377, 266);
+            button1.Name = "button1";
+            button1.Size = new Size(111, 23);
+            button1.TabIndex = 5;
+            button1.Text = "Zapisz trening";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // exercisesPanel
+            // 
+            exercisesPanel.Location = new Point(14, 92);
+            exercisesPanel.Name = "exercisesPanel";
+            exercisesPanel.Size = new Size(340, 197);
+            exercisesPanel.TabIndex = 6;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(14, 74);
+            label4.Name = "label4";
+            label4.Size = new Size(253, 15);
+            label4.TabIndex = 0;
+            label4.Text = "(nazwa ćwiczenia, serii, powtórzeń, obciążenie)";
             // 
             // AddWorkoutControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(dateTimePicker);
-            Controls.Add(label3);
-            Controls.Add(noteTextBox);
-            Controls.Add(label2);
-            Controls.Add(remExerciseBtn);
-            Controls.Add(label1);
-            Controls.Add(workoutSaveBtn);
-            Controls.Add(addExerciseBtn);
+            Controls.Add(label4);
             Controls.Add(exercisesPanel);
+            Controls.Add(button1);
+            Controls.Add(noteBox);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(exercisesQuantity);
+            Controls.Add(label1);
             Name = "AddWorkoutControl";
             Size = new Size(500, 322);
+            ((System.ComponentModel.ISupportInitialize)exercisesQuantity).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private FlowLayoutPanel exercisesPanel;
-        private Button addExerciseBtn;
-        private Button workoutSaveBtn;
         private Label label1;
-        private Button remExerciseBtn;
+        private NumericUpDown exercisesQuantity;
         private Label label2;
-        private TextBox noteTextBox;
         private Label label3;
-        private DateTimePicker dateTimePicker;
+        private TextBox noteBox;
+        private Button button1;
+        private FlowLayoutPanel exercisesPanel;
+        private Label label4;
     }
 }

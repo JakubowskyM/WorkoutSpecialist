@@ -42,6 +42,7 @@
             totalKgLabel.Size = new Size(83, 32);
             totalKgLabel.TabIndex = 0;
             totalKgLabel.Text = "label1";
+            totalKgLabel.Click += totalKgLabel_Click;
             // 
             // firstWorkoutDateLabel
             // 

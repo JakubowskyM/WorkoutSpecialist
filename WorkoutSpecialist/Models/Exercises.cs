@@ -15,8 +15,6 @@ namespace Workoutspecialist.Models
         [MaxLength(100)]
         public string MuscleGroup { get; set; } = null!;
 
-        public string? Description { get; set; }
-
         public ICollection<Workoutexercises> WorkoutExercises { get; set; } = new List<Workoutexercises>();
     }
 }
