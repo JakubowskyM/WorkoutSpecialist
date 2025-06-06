@@ -19,7 +19,7 @@
 
 - [.NET 6.0 SDK lub wyższy](https://dotnet.microsoft.com/download)
 - Visual Studio 2022 lub nowszy
-- SQL Server LocalDB (lub pełna wersja SQL Server)
+- MySQL i XAMPP
 - Entity Framework Core
 
 ---
